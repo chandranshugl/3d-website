@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Desert 3D Website</title>
+    <meta name="description" content="A 3D website using A-Frame with a desert environment">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.0/dist/aframe-environment-component.min.js"></script>
+    <style>
+      body { margin: 0; }
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        color: white;
+        text-shadow: 1px 1px 5px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="centered">Welcome to the Desert</div>
+    <a-scene environment="preset: desert; groundColor: #C2B280; grid: none;">
+      <a-assets>
+        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+      </a-assets>
+      <a-sky src="#skyTexture" rotation="0 -90 0"></a-sky>
+      <a-entity position="0 1.6 -3">
+        <a-text value="Explore the Desert" align="center" color="white" width="6"></a-text>
+      </a-entity>
+      <a-entity id="rig" movement-controls>
+        <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+      </a-entity>
+      <a-box position="0 1 -5" rotation="0 45 0" color="#DAA520" shadow></a-box>
+      <a-sphere position="2 1.25 -5" radius="1.25" color="#CD5C5C" shadow></a-sphere>
+      <a-cylinder position="-1 0.75 -3" radius="0.5" height="1.5" color="#8B4513" shadow></a-cylinder>
+      <a-cone position="3 1 -6" radius-bottom="1" height="2" color="#D2691E" shadow></a-cone>
+      <a-plane rotation="-90 0 0" width="100" height="100" color="#DEB887"></a-plane>
+    </a-scene>
+  </body>
+</html>
+``#57;```
+
+### Explanation
+
+1. **HTML and Head**:
+   - Defined the document structure with `<!DOCTYPE html>`, `<html>`, `<head>`, and meta tags.
+   - Included the A-Frame library and the environment component.
+   - Added a style block for basic page and centered div styling.
+
+2. **Body Content**:
+   - Added a centered div with the text "Welcome to the Desert".
+   - Created an A-Frame scene (`<a-scene>`) with a "desert" environment preset.
+   - Preloaded a sky texture in the `<a-assets>` section and applied it to an `<a-sky>` element.
+   - Positioned a text entity within the scene.
+   - Set up a rig with movement controls and a camera.
+   - Added various 3D shapes (box, sphere, cylinder, cone) with specific positions, colors, and shadows.
+   - Included a plane to serve as the ground.
+
+### Interactive Elements
+
+- **Camera and Controls**:
+  - The camera and controls enable user movement and interaction within the 3D space.
+
+- **3D Shapes**:
+  - Added a cone (`<a-cone>`) to diversify the scene.
+
+This code sets up a basic 3D website with a desert environment, demonstrating how to create different surroundings using A-Frame and HTML.
