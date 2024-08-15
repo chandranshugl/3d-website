@@ -1,131 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Card Game Tutorial</title>
+    <title>Memory-Spiel Tutorial - Python Projekte</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #343a40;
+            line-height: 1.6;
         }
-
         header {
-            background-color: #007bff;
+            background-color: #2c3e50;
             color: #fff;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
+        header img {
+            border-radius: 50%;
+            margin-right: 15px;
         }
-
-        main {
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
-        }
-
-        section {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        h2 {
-            color: #007bff;
-            margin-bottom: 15px;
-        }
-
-        pre {
-            background-color: #f1f1f1;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #343a40;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #28a745;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #218838;
-        }
-
-        .card {
+        .coach {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
         }
-
-        .card-item {
-            flex: 1 1 calc(33.333% - 40px);
-            background-color: #fff;
+        .coach img {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .coach p {
+            margin: 0;
+            font-size: 18px;
+        }
+        h1, h2 {
+            color: #34495e;
+        }
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+        .code-section {
+            background-color: #ecf0f1;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            border: 1px solid #bdc3c7;
+            margin: 20px 0;
+            position: relative;
         }
-
-        .card-item h3 {
-            color: #343a40;
-            margin-top: 0;
+        .code-section pre {
+            margin: 0;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        .social-media {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 18px;
+            border: 1px solid #2c3e50;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .social-media a:hover {
+            background-color: #2c3e50;
+            color: #fff;
         }
     </style>
 </head>
-
 <body>
+
     <header>
-        <h1>Memory Card Game Tutorial</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#tutorial">Tutorial</a>
-            <a href="#about">About</a>
-        </nav>
+        <h1>Memory-Spiel in Python - Ein umfassendes Tutorial</h1>
     </header>
 
-    <main>
-        <section id="home">
-            <h2>Welcome to the Memory Card Game Tutorial</h2>
-            <p>This tutorial will guide you through creating a memory card game using Python. You'll learn how to set up the game board, handle user input, and implement game logic.</p>
-            <a href="#tutorial" class="btn">Start Learning</a>
-        </section>
+    <div class="container">
+        <div class="coach">
+            <img src="https://via.placeholder.com/100" alt="Coach" width="100" height="100">
+            <p>Hallo! Ich bin dein Coach, und ich helfe dir dabei, dieses spannende Memory-Spiel in Python zu erstellen.</p>
+        </div>
 
-        <section id="tutorial">
-            <h2>Step-by-Step Guide</h2>
-            <div class="card">
-                <div class="card-item">
-                    <h3>1. Setting Up</h3>
-                    <p>Install Python and set up your development environment.</p>
-                </div>
-                <div class="card-item">
-                    <h3>2. Creating the Game Board</h3>
-                    <pre><code>def erstelle_spielbrett():
+        <h2>Projektübersicht</h2>
+        <p>In diesem Projekt lernst du, wie du ein Memory-Spiel programmierst, bei dem du Paare von Fruchtsymbolen finden musst. Das Spiel wird in Python erstellt und ist eine großartige Übung, um mit Listen, Schleifen und Bedingungen zu arbeiten.</p>
+
+        <h2>Schritt 1: Vorbereitung</h2>
+        <p>Bevor wir anfangen, stelle sicher, dass du Python auf deinem Computer installiert hast. Erstelle ein neues Python-Skript und bereite dich darauf vor, den folgenden Code einzugeben.</p>
+
+        <h2>Schritt 2: Das Spielfeld erstellen</h2>
+        <div class="code-section">
+            <h3>Code für die Spielfeld-Erstellung:</h3>
+            <pre><code>import random
+
+def erstelle_spielbrett():
     symbole = ["🍎", "🍌", "🍒", "🍇", "🍓", "🍉", "🍍", "🥥"]
     symbole = symbole * 2
     random.shuffle(symbole)
@@ -133,33 +115,103 @@
     brett = []
     for i in range(4):
         brett.append(symbole[i*4:(i+1)*4])
-    return brett
-                    </code></pre>
-                </div>
-                <div class="card-item">
-                    <h3>3. Handling User Input</h3>
-                    <pre><code>def abfrage_eingabe():
+    return brett</code></pre>
+        </div>
+
+        <p>Dieser Code erstellt das Spielfeld, das aus einer zufälligen Anordnung von Fruchtsymbolen besteht.</p>
+
+        <h2>Schritt 3: Das Spielfeld anzeigen</h2>
+        <div class="code-section">
+            <h3>Code für die Spielfeld-Anzeige:</h3>
+            <pre><code>def zeige_brett(brett, aufgedeckt):
+    print("\nAktuelles Spielfeld:")
+    print("  0 1 2 3")
+    for i in range(4):
+        reihe = str(i) + " "
+        for j in range(4):
+            if aufgedeckt[i][j]:
+                reihe += brett[i][j] + " "
+            else:
+                reihe += "❓ "
+        print(reihe)
+    print()</code></pre>
+        </div>
+
+        <p>Mit diesem Code kannst du das Spielfeld anzeigen, wobei verdeckte Karten als "❓" dargestellt werden.</p>
+
+        <h2>Schritt 4: Eingabe der Spielzüge</h2>
+        <div class="code-section">
+            <h3>Code für die Eingabe der Spielzüge:</h3>
+            <pre><code>def abfrage_eingabe():
     while True:
         eingabe = input("Gib die Zeile und Spalte ein (z.B. 0 1): ").split()
-        # Additional code here
-                    </code></pre>
-                </div>
-            </div>
+        if len(eingabe) != 2:
+            print("Ungültige Eingabe. Bitte gib zwei Zahlen ein.")
+            continue
+        try:
+            zeile, spalte = int(eingabe[0]), int(eingabe[1])
+            if 0 <= zeile < 4 and 0 <= spalte < 4:
+                return zeile, spalte
+            else:
+                print("Ungültige Koordinaten. Die Werte müssen zwischen 0 und 3 liegen.")
+        except ValueError:
+            print("Ungültige Eingabe. Bitte gib gültige Zahlen ein.")</code></pre>
+        </div>
 
-            <h3>4. Game Logic</h3>
-            <p>Learn how to implement the game logic, including checking for pairs and handling game completion.</p>
-            <!-- More code snippets and explanations can be added here -->
-        </section>
+        <p>Dieser Abschnitt des Codes erlaubt es dem Spieler, die Position der Karten einzugeben, die aufgedeckt werden sollen.</p>
 
-        <section id="about">
-            <h2>About This Tutorial</h2>
-            <p>This website is created to help beginners learn how to build a memory card game using Python. Follow the tutorial step-by-step to create your project.</p>
-        </section>
-    </main>
+        <h2>Schritt 5: Das Spiel durchführen</h2>
+        <div class="code-section">
+            <h3>Code für das Spiel:</h3>
+            <pre><code>def spiel():
+    brett = erstelle_spielbrett()
+    aufgedeckt = [[False] * 4 for _ in range(4)]
+    gefundene_paare = 0
 
-    <footer>
-        <p>&copy; 2024 Memory Card Game Tutorial</p>
-    </footer>
+    while gefundene_paare < 8:
+        zeige_brett(brett, aufgedeckt)
+
+        print("Erste Karte aufdecken:")
+        zeile1, spalte1 = abfrage_eingabe()
+        if aufgedeckt[zeile1][spalte1]:
+            print("Diese Karte ist bereits aufgedeckt. Wähle eine andere.")
+            continue
+        aufgedeckt[zeile1][spalte1] = True
+        zeige_brett(brett, aufgedeckt)
+
+        print("Zweite Karte aufdecken:")
+        zeile2, spalte2 = abfrage_eingabe()
+        if aufgedeckt[zeile2][spalte2]:
+            print("Diese Karte ist bereits aufgedeckt. Wähle eine andere.")
+            aufgedeckt[zeile1][spalte1] = False  # Erste Karte wieder verdecken
+            continue
+        aufgedeckt[zeile2][spalte2] = True
+        zeige_brett(brett, aufgedeckt)
+
+        if brett[zeile1][spalte1] == brett[zeile2][spalte2]:
+            print("Paar gefunden!")
+            gefundene_paare += 1
+        else:
+            print("Kein Paar! Die Karten werden wieder verdeckt.")
+            aufgedeckt[zeile1][spalte1] = False
+            aufgedeckt[zeile2][spalte2] = False
+
+    print("Herzlichen Glückwunsch! Du hast alle Paare gefunden!")
+
+spiel()</code></pre>
+        </div>
+
+        <p>Dieser letzte Abschnitt enthält den Hauptteil des Spiels, in dem die Spieler ihre Züge machen und Paare finden müssen.</p>
+
+        <h2>Schritt 6: Spiel starten</h2>
+        <p>Um das Spiel zu starten, speichere den gesamten Code in einer Datei mit der Endung <code>.py</code> und führe diese in deiner Python-Umgebung aus. Viel Spaß beim Spielen!</p>
+
+        <div class="social-media">
+            <h2>Folge uns auf Social Media!</h2>
+            <a href="https://www.instagram.com/python_projects" target="_blank">Instagram</a>
+            <a href="https://twitter.com/python_projects" target="_blank">Twitter</a>
+        </div>
+    </div>
+
 </body>
-
 </html>
