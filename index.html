@@ -1,69 +1,165 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Desert 3D Website</title>
-    <meta name="description" content="A 3D website using A-Frame with a desert environment">
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.3.0/dist/aframe-environment-component.min.js"></script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game Tutorial</title>
     <style>
-      body { margin: 0; }
-      .centered {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        color: white;
-        text-shadow: 1px 1px 5px black;
-      }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        pre {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card-item {
+            flex: 1 1 calc(33.333% - 40px);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-item h3 {
+            color: #343a40;
+            margin-top: 0;
+        }
     </style>
-  </head>
-  <body>
-    <div class="centered">Welcome to the Desert</div>
-    <a-scene environment="preset: desert; groundColor: #C2B280; grid: none;">
-      <a-assets>
-        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
-      </a-assets>
-      <a-sky src="#skyTexture" rotation="0 -90 0"></a-sky>
-      <a-entity position="0 1.6 -3">
-        <a-text value="Explore the Desert" align="center" color="white" width="6"></a-text>
-      </a-entity>
-      <a-entity id="rig" movement-controls>
-        <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
-      </a-entity>
-      <a-box position="0 1 -5" rotation="0 45 0" color="#DAA520" shadow></a-box>
-      <a-sphere position="2 1.25 -5" radius="1.25" color="#CD5C5C" shadow></a-sphere>
-      <a-cylinder position="-1 0.75 -3" radius="0.5" height="1.5" color="#8B4513" shadow></a-cylinder>
-      <a-cone position="3 1 -6" radius-bottom="1" height="2" color="#D2691E" shadow></a-cone>
-      <a-plane rotation="-90 0 0" width="100" height="100" color="#DEB887"></a-plane>
-    </a-scene>
-  </body>
+</head>
+
+<body>
+    <header>
+        <h1>Memory Card Game Tutorial</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#tutorial">Tutorial</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to the Memory Card Game Tutorial</h2>
+            <p>This tutorial will guide you through creating a memory card game using Python. You'll learn how to set up the game board, handle user input, and implement game logic.</p>
+            <a href="#tutorial" class="btn">Start Learning</a>
+        </section>
+
+        <section id="tutorial">
+            <h2>Step-by-Step Guide</h2>
+            <div class="card">
+                <div class="card-item">
+                    <h3>1. Setting Up</h3>
+                    <p>Install Python and set up your development environment.</p>
+                </div>
+                <div class="card-item">
+                    <h3>2. Creating the Game Board</h3>
+                    <pre><code>def erstelle_spielbrett():
+    symbole = ["🍎", "🍌", "🍒", "🍇", "🍓", "🍉", "🍍", "🥥"]
+    symbole = symbole * 2
+    random.shuffle(symbole)
+
+    brett = []
+    for i in range(4):
+        brett.append(symbole[i*4:(i+1)*4])
+    return brett
+                    </code></pre>
+                </div>
+                <div class="card-item">
+                    <h3>3. Handling User Input</h3>
+                    <pre><code>def abfrage_eingabe():
+    while True:
+        eingabe = input("Gib die Zeile und Spalte ein (z.B. 0 1): ").split()
+        # Additional code here
+                    </code></pre>
+                </div>
+            </div>
+
+            <h3>4. Game Logic</h3>
+            <p>Learn how to implement the game logic, including checking for pairs and handling game completion.</p>
+            <!-- More code snippets and explanations can be added here -->
+        </section>
+
+        <section id="about">
+            <h2>About This Tutorial</h2>
+            <p>This website is created to help beginners learn how to build a memory card game using Python. Follow the tutorial step-by-step to create your project.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Memory Card Game Tutorial</p>
+    </footer>
+</body>
+
 </html>
-``#57;```
-
-### Explanation
-
-1. **HTML and Head**:
-   - Defined the document structure with `<!DOCTYPE html>`, `<html>`, `<head>`, and meta tags.
-   - Included the A-Frame library and the environment component.
-   - Added a style block for basic page and centered div styling.
-
-2. **Body Content**:
-   - Added a centered div with the text "Welcome to the Desert".
-   - Created an A-Frame scene (`<a-scene>`) with a "desert" environment preset.
-   - Preloaded a sky texture in the `<a-assets>` section and applied it to an `<a-sky>` element.
-   - Positioned a text entity within the scene.
-   - Set up a rig with movement controls and a camera.
-   - Added various 3D shapes (box, sphere, cylinder, cone) with specific positions, colors, and shadows.
-   - Included a plane to serve as the ground.
-
-### Interactive Elements
-
-- **Camera and Controls**:
-  - The camera and controls enable user movement and interaction within the 3D space.
-
-- **3D Shapes**:
-  - Added a cone (`<a-cone>`) to diversify the scene.
-
-This code sets up a basic 3D website with a desert environment, demonstrating how to create different surroundings using A-Frame and HTML.
